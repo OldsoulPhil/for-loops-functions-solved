@@ -6,8 +6,25 @@
 // getClientsWithWrongBalance(bankAccounts) => [{ name: 'Name1', balance: 32, ... }, { name: 'Name2', balance: 3523, ... }]
 
 export function getClientsWithWrongBalance(array) {
-  // Your code goes here...
-
+  const newArray = [];
+  for (let obj of array) {
+    let dsum = 0;
+    let wsum = 0;
+    if (obj.deposits) {
+      for (let numDep of obj.deposits) {
+        dsum += numDep;
+      }
+    }
+    if (obj.withdrawals) {
+      for (let numWith of obj.withdrawals) {
+        wsum += numWith;
+      }
+    }
+    if (obj.balance != (dsum - wsum)) {
+      newArray.push(obj);
+    }
+  }
+  return newArray;
 }
 
 

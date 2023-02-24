@@ -5,8 +5,12 @@
 // getClientsWithBalanceOverOneHundred(array) => [{ name: 'Name1', balance: 32, ... }, { name: 'Name2', balance: 3523, ... }]
 
 export function getClientsWithBalanceOverOneHundred(array) {
-  // Your code goes here...
-
+  const newArr = [];
+  for (let acc of array) {
+    if (acc.balance > 100)
+      newArr.push(acc);
+  }
+  return newArr;
 }
 
 
