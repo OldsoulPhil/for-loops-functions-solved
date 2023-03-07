@@ -6,7 +6,7 @@
 export function getClientWithNoMoney(array) {
   const clientBankAccWNM = [];
   for (let obj of array) {
-    if (obj.balance <= 0)
+    if (obj.balance === 0)
       clientBankAccWNM.push(obj.name);
   }
   return clientBankAccWNM;

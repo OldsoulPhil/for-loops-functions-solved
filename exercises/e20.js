@@ -13,12 +13,11 @@ export function separateNamesWithAFromRest(array) {
       char = char.toLowerCase();
       if (char == 'a') {
         hasA = true;
-        doubleArray[0].push(name);
+        break;
       }
     }
-    if (!hasA) {
-      doubleArray[1].push(name);
-    }
+    const index = hasA ? 0 : 1;
+    doubleArray[index].push(name);
   }
   return doubleArray;
 }

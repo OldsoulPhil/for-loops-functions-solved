@@ -5,9 +5,16 @@
 
 export function getClientWithLeastBalance(array) {
   const clientBankAccWLB = [];
+  let minimum = array[0].balance;
   for (let obj of array) {
-    if (obj.balance != 0 && obj.balance < 100)
+    if (obj.balance != 0 && obj.balance < minimum) {
+      minimum = obj.balance;
+    };
+  }
+  for (let obj of array) {
+    if (obj.balance === minimum) {
       clientBankAccWLB.push(obj);
+    }
   }
   return clientBankAccWLB;
 }

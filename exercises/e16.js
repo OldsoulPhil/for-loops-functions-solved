@@ -6,9 +6,12 @@
 // NOTE: You can NOT use the array.flat() method in your code
 
 export function flatArrays(array) {
-  let newArr = [];
-  for (let words of array) {
-    newArr = newArr.concat(words);
+  const newArr = [];
+  for (let i = 0; i < array.length; i++) {
+    let current = array[i];
+    for (let j = 0; j < current.length; ++j) {
+      newArr.push(current[j]);
+    }
   }
   return newArr;
 }
